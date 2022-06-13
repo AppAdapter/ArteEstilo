@@ -26,7 +26,7 @@ Route::get('/empleado/create',[EmpleadoController::class,'create']);
 */
 Route::resource('empleado',EmpleadoController::class)->middleware('auth');
 
-Auth::routes(/*"para eliminar registro y olvido la contraseña de login"*/[ 'reset'=> false]);
+Auth::routes(/*"para eliminar registro y olvido la contraseña de login"*/['register'=>false, 'reset'=> false]);
 
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
