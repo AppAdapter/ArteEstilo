@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class vrol
+class VerifyRole
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,14 @@ class vrol
      */
     public function handle(Request $request, Closure $next)
     {
+      
+      //dump(auth()->user()->rol_id);
 
        if(auth()->user()->rol_id == 1) {
-            return $next($request);
+          // dump("julian");
+         return $next($request);
          }else {
+           // dump("andres");
             return redirect('/caja');
         }
 

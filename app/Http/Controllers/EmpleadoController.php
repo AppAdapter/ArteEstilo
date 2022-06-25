@@ -33,13 +33,20 @@ class EmpleadoController extends Controller
 
 
 
-    public function operacion(Request $request, $id)
+    public function operacion(Request $request)
     {
+
+         
+        
+        $datosEmpleado= request()->except('_token');
+    
+               if(suma::insert($datosEmpleado)){
        
-        $empleado=Empleado::FindOrFail($id);
-        $dato=$empleado->id;
-        suma::insert($dato);
-        return view('resumen.resumen',$dato);
+            return view('caja.viewcaja');
+        };
+
+        
+        
     }
 
 

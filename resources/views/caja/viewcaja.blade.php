@@ -32,12 +32,12 @@
 
             <td> 
                
-             <form action="{{url('/empleado/'.$empleado->id)}}" method="post" class="d-inline">
+             <form action="{{url('/operacion')}}" method="POST" class="d-inline">
              @csrf
-              <input type="number" name="cantidad" id="cantidad" >
+              <input type="number" name="suma" id="suma" >
               <input type="hidden" name="fecha" vale="{{date('date(y-m-d)')}}">
               <input type="submit" value="Asignar" onclick="return confirm('¿Selecciono bien?')" class="btn btn-success">
-
+              
              </form>
   
 

@@ -55,6 +55,6 @@
         @endforeach
     </tbody>
 </table>
-<a href="{{url('empleado/create')}}" class="btn btn-success"> Crear Empleado</a>
+
 </div>
 @endsection

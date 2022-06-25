@@ -24,7 +24,7 @@ Route::get('/empleado', function () {
 
 Route::get('/empleado/create',[EmpleadoController::class,'create']);
 */
-Route::resource('empleado',EmpleadoController::class)->middleware('auth');
+
 
 Auth::routes(/*"para eliminar registro y olvido la contraseña de login"*/['register'=>false, 'reset'=> false]);
 
@@ -32,9 +32,13 @@ Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
 Route::group(['middleware'=>['vrol', 'auth']],function () { 
     Route::get('/', [EmpleadoController::class, 'index'])->name('home');
+    Route::resource('empleado',EmpleadoController::class)->middleware('auth');
+    
 });
 
 
 
 
 Route::get('/caja', [EmpleadoController::class, 'caja'])->name('home')->middleware('auth');
+
+Route::post('/operacion', [EmpleadoController::class, 'operacion'])->name('operacion')->middleware('auth');

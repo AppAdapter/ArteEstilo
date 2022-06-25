@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sumas', function (Blueprint $table) {
             $table->integer('empleado_id');
             $table->double('suma');
+            $table->date('fecha');
             $table->timestamps();
         });
     }
