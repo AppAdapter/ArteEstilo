@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\suma;
 use App\Models\Empleado;
 use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\Storage;
@@ -21,34 +20,6 @@ class EmpleadoController extends Controller
         $datos['empleados']= Empleado::paginate(5);
         return view('empleado.index',$datos);
     }
-
-   
-    public function caja()
-    {
-       
-        $datos['empleados']= Empleado::paginate(5);
-       
-        return view('caja.viewcaja',$datos);
-    }
-
-
-
-    public function operacion(Request $request)
-    {
-
-         
-        
-        $datosEmpleado= request()->except('_token');
-    
-               if(suma::insert($datosEmpleado)){
-       
-            return view('caja.viewcaja');
-        };
-
-        
-        
-    }
-
 
     /**
      * Show the form for creating a new resource.

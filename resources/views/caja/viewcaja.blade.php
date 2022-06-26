@@ -6,6 +6,21 @@
 @section('content')
 <div class="container">
 
+@if(Session::has('mensaje')){
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        
+        {{Session::get('mensaje')}}
+    
+
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+       <span aria-hidden="true" >&times;</span>
+     </button>
+    </div>
+    
+}@endif
+
 
 <table class="table table-light">
     <thead class="thead-light">
@@ -32,11 +47,12 @@
 
             <td> 
                
-             <form action="{{url('/operacion')}}" method="POST" class="d-inline">
+             <form action="{{route('operacion')}}" method="POST" class="d-inline">
              @csrf
+             <input type="hidden" name="empleado_id" value="{{$empleado->id}}">
               <input type="number" name="suma" id="suma" >
-              <input type="hidden" name="fecha" vale="{{date('date(y-m-d)')}}">
-              <input type="submit" value="Asignar" onclick="return confirm('¿Selecciono bien?')" class="btn btn-success">
+              <input type="hidden" name="fecha" value="{{date('y-m-d')}}">
+              <input type="submit" value="Asignar" onclick="return confirm('Porfavor verifique que el valor es el indicado, y asegurese de que el empleado es el indicado, si es correcto dar click en Aceptar')" class="btn btn-success">
               
              </form>
   

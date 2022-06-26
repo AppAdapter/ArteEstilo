@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CajaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 /*
@@ -33,12 +34,11 @@ Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 Route::group(['middleware'=>['vrol', 'auth']],function () { 
     Route::get('/', [EmpleadoController::class, 'index'])->name('home');
     Route::resource('empleado',EmpleadoController::class)->middleware('auth');
-    
+   
 });
 
 
+Route::get('/caja', [CajaController::class, 'index'])->name('inicio')->middleware('auth');
 
+Route::post('/operacion', [CajaController::class, 'operacion'])->name('operacion')->middleware('auth');
 
-Route::get('/caja', [EmpleadoController::class, 'caja'])->name('home')->middleware('auth');
-
-Route::post('/operacion', [EmpleadoController::class, 'operacion'])->name('operacion')->middleware('auth');

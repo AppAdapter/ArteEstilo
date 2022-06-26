@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sumas', function (Blueprint $table) {
-            $table->integer('empleado_id');
+            $table->integer('id');
             $table->double('suma');
             $table->date('fecha');
             $table->timestamps();

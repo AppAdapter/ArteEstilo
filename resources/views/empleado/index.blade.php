@@ -5,10 +5,12 @@
 <div class="container">
 
 
-
 @if(Session::has('mensaje')){
+    <div class="alert alert-primary" role="alert">
     {{Session::get('mensaje')}}
+    </div>
 }@endif
+
 
 
 <br>
