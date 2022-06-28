@@ -3,6 +3,8 @@
 use App\Http\Controllers\CajaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\ResumenController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,11 +36,13 @@ Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 Route::group(['middleware'=>['vrol', 'auth']],function () { 
     Route::get('/', [EmpleadoController::class, 'index'])->name('home');
     Route::resource('empleado',EmpleadoController::class)->middleware('auth');
+    Route::get('/resumen',[ResumenController::class, 'index'])->name('resumen')->middleware('auth');
+
    
 });
 
 
+
 Route::get('/caja', [CajaController::class, 'index'])->name('inicio')->middleware('auth');
 
-Route::post('/operacion', [CajaController::class, 'operacion'])->name('operacion')->middleware('auth');
-
+Route::post('/operacion', [CajaController::class, 'operacion'])->name('operacion')->middleware('auth'); 

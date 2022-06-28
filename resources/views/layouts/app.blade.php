@@ -42,7 +42,7 @@
 
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('empleado/resumen') }}">{{ __('Resumne  ') }}</a>
+                            <a class="nav-link" href="{{ route('resumen') }}">{{ __('Resumne  ') }}</a>
                         </li>
 
                         <li class="nav-item">
