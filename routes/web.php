@@ -45,4 +45,7 @@ Route::group(['middleware'=>['vrol', 'auth']],function () {
 
 Route::get('/caja', [CajaController::class, 'index'])->name('inicio')->middleware('auth');
 
-Route::post('/operacion', [CajaController::class, 'operacion'])->name('operacion')->middleware('auth'); 
+Route::post('/operacion', [CajaController::class, 'operacion'])->name('operacion')->middleware('auth');
+
+Route::resource('Resumen', ResumenController::class)->middleware('auth');
+
