@@ -8,7 +8,7 @@
 </p>
 
 ## Trabajo hecho en larabel
- Este trabajo fue realizado con el framework Larabel, este aplicativo fue realizado como proyecto final para el programa de tecnología en análisis y desarrollo de sistemas de información 
+ Este trabajo fue realizado con el framework Larabel, este aplicativo se desarrollo como proyecto final para el programa de tecnología en análisis y desarrollo de sistemas de información 
  en la sede SENA centro de la industria, la empresa y los servicios-cucuta, modalidad virtual.
 
 
